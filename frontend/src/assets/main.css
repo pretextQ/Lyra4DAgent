@@ -1,0 +1,125 @@
+/* Lyra4D · Crafted 手工质感 · 羊皮纸书房主题 */
+
+:root {
+  /* 背景层 */
+  --bg-page:        #faf6ed;
+  --bg-surface:     #f5f1e6;
+  --bg-raised:      #ffffff;
+
+  /* 文字层 */
+  --text-primary:   #3d352a;
+  --text-secondary: #8b7355;
+  --text-muted:     #b8a88c;
+
+  /* 边框 & 分隔 */
+  --border:         #e0d5c1;
+  --border-light:   #ede4d2;
+
+  /* 品牌色 */
+  --accent:         #8b5e3c;
+  --accent-warm:    #c99d6a;
+  --success:        #5a8f6c;
+  --warning:        #c1642a;
+  --error:          #b8453a;
+
+  /* 字体 */
+  --font-mono:  'IBM Plex Mono', 'JetBrains Mono', monospace;
+  --font-body:  'Noto Serif SC', 'Source Han Serif SC', serif;
+  --font-ui:    -apple-system, 'PingFang SC', system-ui, sans-serif;
+
+  /* 间距 */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   40px;
+  --space-2xl:  64px;
+
+  /* 形状 */
+  --radius:     2px;
+  --content-width: 680px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* 通用按钮 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #7a5030;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+  color: var(--text-primary);
+  background: var(--bg-surface);
+}
+
+/* 卡片 */
+.card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out both;
+}

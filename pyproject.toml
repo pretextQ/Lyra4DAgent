@@ -1,0 +1,41 @@
+[project]
+name = "lyra4d-agent"
+version = "0.1.0"
+description = "Lyra4D 多Agent提示词智能优化系统"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "langgraph>=1.0.0",
+    "langchain>=1.0.0",
+    "langchain-openai>=1.0.0",
+    "chromadb>=1.0.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "gradio>=6.0.0",
+    "python-dotenv>=1.0.0",
+    "sse-starlette>=2.0.0",
+    "mcp>=1.27.1",
+    "langchain-mcp-adapters>=0.2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.27.0",
+]
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple/"
+default = true
+
+[project.scripts]
+lyra4d = "main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = []
