@@ -32,5 +32,8 @@ frontend/node_modules/
 .DS_Store
 Thumbs.db
 
+# Test scripts
+test_run.py
+
 # Logs
 *.log
